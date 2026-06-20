@@ -1,0 +1,594 @@
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Business Consulting Kaufmann | KI & Prozessoptimierung für den Mittelstand</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --navy:#1E3A5F;
+    --mint:#AEE1D6;
+    --light:#F5F7FA;
+    --slate:#6B7280;
+    --white:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    color:var(--slate);
+    background:#fff;
+    line-height:1.7;
+}
+
+.container{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+}
+
+section{
+    padding:120px 0;
+}
+
+/* --------------------
+NAVIGATION
+-------------------- */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(0,0,0,.05);
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:90px;
+}
+
+.logo img{
+    height:65px;
+}
+
+.nav-links{
+    display:flex;
+    gap:40px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--navy);
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#4CA9B0;
+}
+
+/* --------------------
+HERO
+-------------------- */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f8fafc 100%);
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:80px;
+}
+
+.hero-badge{
+    display:inline-block;
+    background:#eaf7f3;
+    color:var(--navy);
+    padding:10px 18px;
+    border-radius:50px;
+    font-size:.9rem;
+    font-weight:600;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    color:var(--navy);
+    font-size:4rem;
+    line-height:1.1;
+    font-weight:800;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#4CA9B0;
+}
+
+.hero p{
+    font-size:1.2rem;
+    max-width:650px;
+    margin-bottom:40px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn-primary{
+    background:var(--navy);
+    color:white;
+    padding:16px 32px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.btn-primary:hover{
+    opacity:.9;
+}
+
+.btn-secondary{
+    border:2px solid var(--navy);
+    color:var(--navy);
+    padding:16px 32px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.hero-image{
+    position:relative;
+}
+
+.hero-image img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 20px 60px rgba(0,0,0,.08);
+}
+
+.hero-card{
+    position:absolute;
+    bottom:-30px;
+    left:-30px;
+
+    background:white;
+    padding:25px;
+    border-radius:16px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.hero-card strong{
+    color:var(--navy);
+    font-size:1.2rem;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:80px;
+}
+
+.section-title h2{
+    color:var(--navy);
+    font-size:2.8rem;
+    margin-bottom:15px;
+}
+
+.line{
+    width:90px;
+    height:4px;
+    background:var(--mint);
+    margin:auto;
+}
+
+/* --------------------
+LEISTUNGEN
+-------------------- */
+
+.services{
+    background:var(--light);
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:40px;
+    border-radius:18px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:var(--navy);
+    margin-bottom:20px;
+}
+
+.card p{
+    color:var(--slate);
+}
+
+/* --------------------
+VORTEILE
+-------------------- */
+
+.advantages{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+.adv{
+    text-align:center;
+}
+
+.adv-number{
+    color:#4CA9B0;
+    font-size:3rem;
+    font-weight:800;
+}
+
+.adv h4{
+    color:var(--navy);
+    margin-bottom:10px;
+}
+
+/* --------------------
+ABOUT
+-------------------- */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:80px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:20px;
+}
+
+.about h2{
+    color:var(--navy);
+    margin-bottom:25px;
+    font-size:2.6rem;
+}
+
+/* --------------------
+CTA
+-------------------- */
+
+.cta{
+    background:var(--navy);
+    text-align:center;
+    color:white;
+}
+
+.cta h2{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.cta p{
+    max-width:700px;
+    margin:auto;
+    margin-bottom:35px;
+}
+
+.cta a{
+    background:var(--mint);
+    color:var(--navy);
+    padding:18px 35px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:700;
+}
+
+/* --------------------
+FOOTER
+-------------------- */
+
+footer{
+    padding:40px;
+    text-align:center;
+    border-top:1px solid #eee;
+}
+
+/* --------------------
+MOBILE
+-------------------- */
+
+@media(max-width:992px){
+
+.hero-grid,
+.about-grid{
+    grid-template-columns:1fr;
+}
+
+.advantages{
+    grid-template-columns:1fr 1fr;
+}
+
+.hero h1{
+    font-size:2.8rem;
+}
+
+.hero-card{
+    position:relative;
+    left:0;
+    bottom:0;
+    margin-top:20px;
+}
+}
+
+@media(max-width:768px){
+
+.nav-links{
+    gap:20px;
+    font-size:.9rem;
+}
+
+.advantages{
+    grid-template-columns:1fr;
+}
+
+.hero h1{
+    font-size:2.2rem;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container navbar">
+
+<div class="logo">
+<img src="Logo(3).png" alt="Business Consulting Kaufmann">
+</div>
+
+<nav class="nav-links">
+<a href="#leistungen">Leistungen</a>
+<a href="#vorgehen">Vorgehen</a>
+<a href="#ueber">Über mich</a>
+<a href="#kontakt">Kontakt</a>
+</nav>
+
+</div>
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-grid">
+
+<div>
+
+<div class="hero-badge">
+KI-Beratung & Prozessoptimierung für den Mittelstand
+</div>
+
+<h1>
+KI, die Ihren Betrieb
+<span>wirklich weiterbringt.</span>
+</h1>
+
+<p>
+Pragmatische KI-Beratung für mittelständische Unternehmen.
+Verständlich. Bezahlbar. Umsetzbar.
+Ohne Buzzwords. Mit messbaren Ergebnissen.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#kontakt" class="btn-primary">
+Kostenlosen KI-Schnellcheck buchen
+</a>
+
+<a href="#leistungen" class="btn-secondary">
+Leistungen ansehen
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="portrait-placeholder.jpg" alt="Katja Kaufmann">
+
+<div class="hero-card">
+<strong>MBA · KI-Managerin</strong><br>
+15 Jahre Operations-Erfahrung
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="leistungen" class="services">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Leistungen</h2>
+<div class="line"></div>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>KI-Potenzialanalyse</h3>
+<p>
+Identifikation konkreter Einsatzmöglichkeiten mit messbarem Mehrwert für Ihr Unternehmen.
+</p>
+</div>
+
+<div class="card">
+<h3>Prozessoptimierung</h3>
+<p>
+Analyse bestehender Abläufe und Entwicklung effizienter KI-gestützter Prozesse.
+</p>
+</div>
+
+<div class="card">
+<h3>Workshops & Schulungen</h3>
+<p>
+Praxisnahe Trainings für Führungskräfte und Teams.
+</p>
+</div>
+
+<div class="card">
+<h3>KI-Roadmap</h3>
+<p>
+Schritt-für-Schritt-Plan für die erfolgreiche Einführung von KI.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="vorgehen">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Warum Business Consulting Kaufmann?</h2>
+<div class="line"></div>
+</div>
+
+<div class="advantages">
+
+<div class="adv">
+<div class="adv-number">15+</div>
+<h4>Jahre Erfahrung</h4>
+<p>Operations, Prozesse und Unternehmenssteuerung.</p>
+</div>
+
+<div class="adv">
+<div class="adv-number">MBA</div>
+<h4>Strategischer Blick</h4>
+<p>Wirtschaft trifft Technologie.</p>
+</div>
+
+<div class="adv">
+<div class="adv-number">KI</div>
+<h4>Praxis statt Hype</h4>
+<p>Quick Wins statt Großprojekte.</p>
+</div>
+
+<div class="adv">
+<div class="adv-number">100%</div>
+<h4>Pragmatisch</h4>
+<p>Norddeutsch direkt und lösungsorientiert.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="ueber" class="about">
+
+<div class="container">
+
+<div class="about-grid">
+
+<div>
+<img src="portrait-placeholder.jpg" alt="Katja Kaufmann">
+</div>
+
+<div>
+
+<h2>Über Katja Kaufmann</h2>
+
+<p>
+Ich verbinde betriebswirtschaftliche Erfahrung mit aktuellem KI-Know-how.
+Als MBA, General Managerin und zertifizierte KI-Managerin unterstütze ich Unternehmen dabei, KI sinnvoll einzusetzen – nicht als Selbstzweck, sondern als Werkzeug für mehr Effizienz, bessere Entscheidungen und nachhaltiges Wachstum.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="kontakt" class="cta">
+
+<div class="container">
+
+<h2>Kostenloser KI-Schnellcheck</h2>
+
+<p>
+Lassen Sie uns gemeinsam herausfinden, wo KI in Ihrem Unternehmen echten Mehrwert schaffen kann.
+Das Erstgespräch ist unverbindlich und kostenfrei.
+</p>
+
+<a href="mailto:info@ihredomain.de">
+Termin vereinbaren
+</a>
+
+</div>
+
+</section>
+
+<footer>
+© 2025 Business Consulting Kaufmann
+</footer>
+
+</body>
+</html>
+```
